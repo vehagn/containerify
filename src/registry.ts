@@ -206,6 +206,7 @@ function uploadContent(
 			"content-type": fileConfig.mediaType,
 		};
 		logger.debug("POST", url);
+		logger.debug("OPTIONS", options)
 		const req = request(options, allowInsecure, (res) => {
 			logger.debug(res.statusCode, res.statusMessage, res.headers["content-type"], res.headers["content-length"]);
 			if ([200, 201, 202, 203].includes(res.statusCode ?? 0)) {
